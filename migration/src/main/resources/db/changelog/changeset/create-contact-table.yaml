@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-contact
+      author: ruzana
+      changes:
+        - createTable:
+            tableName: contact
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: phone_number
+                  type: varchar(32)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: email
+                  type: varchar(128)
+                  constraints:
+                    unique: true
+              - column:
+                  name: profile_link
+                  type: text
+                  constraints:
+                    unique: true

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="ru.common.medical_clinic.person_service.core.repository.ContactRepository">
+
+    <resultMap id="contactEntity" type="ru.common.medical_clinic.person_service.core.model.ContactEntity"
+               autoMapping="true">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <insert id="insert" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        insert into contact (phone_number, email, profile_link)
+        values (#{phoneNumber}, #{email}, #{profileLink});
+    </insert>
+
+    <update id="update" parameterType="ru.common.medical_clinic.person_service.core.model.ContactEntity">
+        update contact
+        set phone_number = #{phoneNumber},
+            email        = #{email},
+            profile_link = #{profileLink}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteById" parameterType="java.lang.Long">
+        delete
+        from contact
+        where id = #{id}
+    </delete>
+
+
+</mapper>

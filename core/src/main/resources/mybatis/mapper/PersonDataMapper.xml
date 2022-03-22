@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="ru.common.medical_clinic.person_service.core.repository.PersonDataRepository">
+
+    <resultMap id="personEntity" type="ru.common.medical_clinic.person_service.core.model.PersonDataEntity"
+               autoMapping="true">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+    </resultMap>
+    <update id="update" parameterType="ru.common.medical_clinic.person_service.core.model.PersonDataEntity">
+        update person_data
+        set last_name       = #{lastName},
+            first_name      = #{firstName},
+            birth_dt        = #{birthDt},
+            age             = #{age},
+            sex             = #{sex},
+            contact_id      = #{contactId},
+            medical_card_id = #{contactId},
+        parent_id       = #{parentId}
+        where id = #{id};
+    </update>
+
+    <select id="innerJoinPersonDataAndContact" resultMap="personEntity"
+            resultType="ru.common.medical_clinic.person_service.dto.PersonDataContactDto">
+        select *
+        from person_data
+                 inner join contact c on c.id = person_data.contact_id
+        order by person_data.id asc;
+    </select>
+
+    <select id="getHalfOfPersonData" resultType="ru.common.medical_clinic.person_service.core.model.PersonDataEntity">
+        select *
+        from person_data
+        order by person_data.id asc
+        limit (select count(*) / 2 from person_data)
+    </select>
+
+    <select id="getPersonDataWithParentWhichHasNotMedicalStatus"
+            resultType="ru.common.medical_clinic.person_service.core.model.PersonDataEntity">
+        select distinct person_data.id         as child_id,
+                        person_data.first_name as child_first_name,
+                        person_data.last_name  as child_last_name,
+                        parent.id              as parent_id,
+                        parent.first_name      as parent_first_name,
+                        parent.last_name       as parent_last_name,
+                        parent_card.med_status as parent_med_status
+        from person_data
+                 inner join person_data parent on parent.id = person_data.parent_id
+                 inner join medical_card parent_card on parent_card.med_status is null
+    </select>
+
+    <select id="getPersonAddress"
+            resultType="ru.common.medical_clinic.person_service.dto.PersonAddressDto">
+        select *
+        from getPersonAddress();
+    </select>
+
+    <insert id="insert" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        insert into person_data (last_name, first_name, birth_dt, age, sex, contact_id, medical_card_id, parent_id)
+        values (#{lastName}, #{firstName}, #{birthDt}, #{age}, #{sex}, #{contactId}, #{medicalCardId},
+                #{parentId});
+    </insert>
+
+    <delete id="deleteRepeatedObjects">
+        delete
+        from person_data person using (select min(id) as id, first_name, last_name
+                                       from person_data
+                                       GROUP BY id
+                                       HAVING COUNT(*) > 1) b
+        where person.first_name = b.first_name
+          and person.last_name = b.last_name
+          and person.id != b.id;
+    </delete>
+
+    <delete id="deleteById" parameterType="java.lang.Long">
+        delete from person_data where id = #{id}
+    </delete>
+</mapper>

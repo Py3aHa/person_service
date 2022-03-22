@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="ru.common.medical_clinic.person_service.core.repository.AddressRepository">
+
+    <resultMap id="addressEntity" type="ru.common.medical_clinic.person_service.core.model.AddressEntity"
+               autoMapping="true">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <insert id="insert" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        insert into address (contact_id, county_id, city, index, street, building, flat)
+        values (#{contactId}, #{countryId}, #{city}, #{index}, #{street}, #{building}, #{flat});
+    </insert>
+
+    <update id="update" parameterType="ru.common.medical_clinic.person_service.core.model.AddressEntity">
+        update address
+        set contact_id = #{contactId},
+            county_id = #{countryId},
+            city = #{city},
+            index = #{index},
+            street = #{street},
+            building = #{building},
+            flat = #{flat}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteById" parameterType="java.lang.Long">
+        delete
+        from address
+        where id = #{id}
+    </delete>
+
+
+</mapper>

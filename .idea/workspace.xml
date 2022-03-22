@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ecf872af-7772-40a9-9994-dfe17547998c" name="Changes" comment="" />
+    <list default="true" id="ecf872af-7772-40a9-9994-dfe17547998c" name="Changes" comment="person service">
+      <change afterPath="$PROJECT_DIR$/migration/src/main/resources/db/changelog/changeset/create-contact-table.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migration/src/main/resources/db/changelog/db.changelog-master.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cd889d6d-02fa-47e7-a60b-860c7bcf1e37.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/cd889d6d-02fa-47e7-a60b-860c7bcf1e37.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cd889d6d-02fa-47e7-a60b-860c7bcf1e37/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/cd889d6d-02fa-47e7-a60b-860c7bcf1e37/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core-api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ru/common/medical_clinic/person_service/core/PersonServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ru/common/medical_clinic/person_service/core/PersonServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-management-bom/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dependency-management-bom/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dto/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dto/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migration/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/migration/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/utils/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +30,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -23,7 +41,6 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/core-api/pom.xml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/core/src/main/java/ru/common/medical_clinic/person_service/core/PersonServiceApplication.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/core/src/main/resources/application.properties" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/dto/pom.xml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/dto/src/main/java/ru/common/medical_clinic/person_service/dto/DeviationByIndicators.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/dto/src/main/java/ru/common/medical_clinic/person_service/dto/InformationFromDevices.java" root0="FORCE_HIGHLIGHTING" />
@@ -49,40 +66,52 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-11&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/kirill/IdeaProjects/medicine_clinic_project/person_service/dto&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
+    "database.data.extractors.current.id": "Comma-separated (CSV)_id",
+    "jdk.selected.JAVA_MODULE": "corretto-11",
+    "last_opened_file_path": "/home/kirill/IdeaProjects/medicine_clinic_project/person_service/migration/src/main/resources/db/changelog",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "2b703c56b250182a7eea08ac4f919469"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ],
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
+      "PostgreSQL"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/dto" />
+      <recent name="$PROJECT_DIR$/migration/src/main/resources/db/changelog" />
       <recent name="$PROJECT_DIR$/core/src/main/resources" />
+      <recent name="$PROJECT_DIR$/dto" />
       <recent name="$PROJECT_DIR$/core" />
       <recent name="$PROJECT_DIR$/core/src/main" />
-      <recent name="$PROJECT_DIR$/core-api" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/migration/src/main/resources/db" />
+      <recent name="$PROJECT_DIR$/core/src/main/resources/mybatis/mapper" />
+      <recent name="$PROJECT_DIR$/migration/src/main/resources/db/changelog/start-0.0.1/sql" />
+      <recent name="$PROJECT_DIR$/migration/src/main/resources/db/changelog/start-0.0.1" />
       <recent name="$PROJECT_DIR$/core" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -103,8 +132,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ru.common.medical_clinic.person_service.core.PersonServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.common.medical_clinic.person_service.core.PersonServiceApplication" />
+      <module name="person-service-core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.common.medical_clinic.person_service.core.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PersonServiceApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="core" />
+      <module name="person-service-core" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ru.common.medical_clinic.person_service.core.*" />
@@ -132,6 +174,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.PersonServiceApplication (1)" />
+        <item itemvalue="Application.ru.common.medical_clinic.person_service.core.PersonServiceApplication" />
         <item itemvalue="Application.PersonServiceApplication" />
       </list>
     </recent_temporary>
@@ -148,8 +191,30 @@
       <workItem from="1646588102608" duration="1575000" />
       <workItem from="1646589690680" duration="3302000" />
       <workItem from="1646656385036" duration="2845000" />
-      <workItem from="1646660870084" duration="1994000" />
+      <workItem from="1646660870084" duration="2585000" />
+      <workItem from="1647012006787" duration="647000" />
+      <workItem from="1647451159825" duration="4445000" />
+      <workItem from="1647627456393" duration="7226000" />
+      <workItem from="1647699008699" duration="62309000" />
+      <workItem from="1647801080500" duration="1753000" />
+      <workItem from="1647852521066" duration="29602000" />
+      <workItem from="1647937401120" duration="14223000" />
     </task>
+    <task id="LOCAL-00001" summary="person service">
+      <created>1646665790352</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1646665790352</updated>
+    </task>
+    <task id="LOCAL-00002" summary="person service">
+      <created>1646665933231</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1646665933231</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,5 +230,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="person service" />
+    <option name="LAST_COMMIT_MESSAGE" value="person service" />
   </component>
 </project>

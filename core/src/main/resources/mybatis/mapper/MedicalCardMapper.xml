@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="ru.common.medical_clinic.person_service.core.repository.MedicalCardRepository">
+
+    <resultMap id="cardEntity" type="ru.common.medical_clinic.person_service.core.model.MedicalCardEntity"
+               autoMapping="true">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <insert id="insert" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        insert into medical_card (client_status, med_status, registry_date, comment)
+        values (#{clientStatus}, #{medStatus}, #{registryDt}, #{comment});
+    </insert>
+
+    <update id="update" parameterType="ru.common.medical_clinic.person_service.core.model.MedicalCardEntity">
+        update medical_card
+        set client_status = #{clientStatus},
+            med_status    = #{medStatus},
+            registry_date = #{registryDt},
+            comment       = #{comment}
+        where id = #{id}
+    </update>
+    <delete id="deleteById" parameterType="java.lang.Long">
+        delete
+        from medical_card
+        where id = #{id}
+    </delete>
+
+
+</mapper>

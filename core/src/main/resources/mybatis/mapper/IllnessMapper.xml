@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="ru.common.medical_clinic.person_service.core.repository.IllnessRepository">
+
+    <resultMap id="illnessEntity" type="ru.common.medical_clinic.person_service.core.model.IllnessEntity"
+               autoMapping="true">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <insert id="insert" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        insert into illness (medical_card_id, type_id, heaviness, appearance_dttm, recovery_dt)
+        values (#{medicalCardId}, #{typeId}, #{heaviness}, #{appearanceDttm}, #{recoveryDt});
+    </insert>
+
+    <update id="update" parameterType="ru.common.medical_clinic.person_service.core.model.IllnessEntity">
+        update illness
+        set medical_card_id = #{medicalCardId},
+            type_id = #{typeId},
+            heaviness = #{heaviness},
+            appearance_dttm = #{appearanceDttm},
+            recovery_dt = #{recoveryDt}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteById" parameterType="java.lang.Long">
+        delete
+        from illness
+        where id = #{id}
+    </delete>
+
+
+</mapper>
