@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="ru.common.medical_clinic.person_service.core.repository.RolesRepository">
+
+    <resultMap id="personEntity" type="ru.common.medical_clinic.person_service.core.model.Roles"
+               autoMapping="true">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <insert id="insert" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        insert into roles (role)
+        values (#{role});
+    </insert>
+
+    <select id="getAllByPersonId" resultType="ru.common.medical_clinic.person_service.core.model.Roles">
+        select r.id, r.role
+        from person_data
+                 left join users_roles ur on ur.user_id = person_data.id
+                 left join roles r on r.id = ur.role_id
+    </select>
+
+</mapper>
