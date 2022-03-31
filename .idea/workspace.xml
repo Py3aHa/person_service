@@ -4,23 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ecf872af-7772-40a9-9994-dfe17547998c" name="Changes" comment="person service">
-      <change afterPath="$PROJECT_DIR$/migration/src/main/resources/db/changelog/changeset/create-contact-table.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migration/src/main/resources/db/changelog/db.changelog-master.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="ecf872af-7772-40a9-9994-dfe17547998c" name="Changes" comment="liquibase and mybatis">
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/ru/common/medical_clinic/person_service/core/Init.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/ru/common/medical_clinic/person_service/core/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/ru/common/medical_clinic/person_service/core/config/handler/LoginSuccessHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/ru/common/medical_clinic/person_service/core/controller/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/ru/common/medical_clinic/person_service/core/controller/AuthenticationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/ru/common/medical_clinic/person_service/core/controller/BaseUserDataController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/ru/common/medical_clinic/person_service/core/controller/impl/AdminControllerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/ru/common/medical_clinic/person_service/core/controller/impl/AuthenticationControllerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/ru/common/medical_clinic/person_service/core/model/Roles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/ru/common/medical_clinic/person_service/core/model/UsersRoles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/ru/common/medical_clinic/person_service/core/repository/RolesRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/ru/common/medical_clinic/person_service/core/service/RolesService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/ru/common/medical_clinic/person_service/core/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/ru/common/medical_clinic/person_service/core/service/impl/RolesServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/ru/common/medical_clinic/person_service/core/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/resources/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/spring-boot-logging.log.2022-03-22.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/spring-boot-logging.log.2022-03-27.0.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/cd889d6d-02fa-47e7-a60b-860c7bcf1e37.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/cd889d6d-02fa-47e7-a60b-860c7bcf1e37.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/cd889d6d-02fa-47e7-a60b-860c7bcf1e37/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/cd889d6d-02fa-47e7-a60b-860c7bcf1e37/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core-api/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/ru/common/medical_clinic/person_service/core/PersonServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ru/common/medical_clinic/person_service/core/PersonServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dependency-management-bom/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dependency-management-bom/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dto/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dto/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migration/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/migration/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/utils/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ru/common/medical_clinic/person_service/core/controller/impl/PersonDataControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ru/common/medical_clinic/person_service/core/controller/impl/PersonDataControllerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ru/common/medical_clinic/person_service/core/model/PersonDataEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ru/common/medical_clinic/person_service/core/model/PersonDataEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ru/common/medical_clinic/person_service/core/repository/PersonDataRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ru/common/medical_clinic/person_service/core/repository/PersonDataRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/resources/mybatis/mapper/PersonDataMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/resources/mybatis/mapper/PersonDataMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/spring-boot-logging.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/spring-boot-logging.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migration/src/main/resources/db/changelog/start-0.0.1/sql/create_db_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/migration/src/main/resources/db/changelog/start-0.0.1/sql/create_db_tables.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +47,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="HTML File" />
         <option value="Class" />
       </list>
     </option>
@@ -68,6 +85,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -78,7 +96,7 @@
     "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
     "database.data.extractors.current.id": "Comma-separated (CSV)_id",
     "jdk.selected.JAVA_MODULE": "corretto-11",
-    "last_opened_file_path": "/home/kirill/IdeaProjects/medicine_clinic_project/person_service/migration/src/main/resources/db/changelog",
+    "last_opened_file_path": "/home/kirill/IdeaProjects/medicine_clinic_project/person_service/core/src/main/resources/mybatis/mapper",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -88,7 +106,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "2b703c56b250182a7eea08ac4f919469"
+    "spring.configuration.checksum": "0b21cbe1092e03d606a5b60853433aa7"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -101,11 +119,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/core/src/main/resources/mybatis/mapper" />
       <recent name="$PROJECT_DIR$/migration/src/main/resources/db/changelog" />
       <recent name="$PROJECT_DIR$/core/src/main/resources" />
       <recent name="$PROJECT_DIR$/dto" />
       <recent name="$PROJECT_DIR$/core" />
-      <recent name="$PROJECT_DIR$/core/src/main" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/migration/src/main/resources/db" />
@@ -115,6 +133,8 @@
       <recent name="$PROJECT_DIR$/core" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.common.medical_clinic.person_service.core.controller" />
+      <recent name="ru.common.medical_clinic.person_service.core.controller.impl" />
       <recent name="" />
     </key>
   </component>
@@ -147,19 +167,13 @@
     </configuration>
     <configuration name="PersonServiceApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="person-service-core" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.common.medical_clinic.person_service.core.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.common.medical_clinic.person_service.core.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="ru.common.medical_clinic.person_service.core.PersonServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.common.medical_clinic.person_service.core.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -198,7 +212,10 @@
       <workItem from="1647699008699" duration="62309000" />
       <workItem from="1647801080500" duration="1753000" />
       <workItem from="1647852521066" duration="29602000" />
-      <workItem from="1647937401120" duration="14223000" />
+      <workItem from="1647937401120" duration="14572000" />
+      <workItem from="1648110956398" duration="599000" />
+      <workItem from="1648369668596" duration="47203000" />
+      <workItem from="1648707927238" duration="1155000" />
     </task>
     <task id="LOCAL-00001" summary="person service">
       <created>1646665790352</created>
@@ -214,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646665933231</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="liquibase and mybatis">
+      <created>1647952359589</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1647952359589</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,6 +257,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="person service" />
-    <option name="LAST_COMMIT_MESSAGE" value="person service" />
+    <MESSAGE value="liquibase and mybatis" />
+    <option name="LAST_COMMIT_MESSAGE" value="liquibase and mybatis" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/person_service$PersonServiceApplication__1_.ic" NAME="PersonServiceApplication (1) Coverage Results" MODIFIED="1648544575794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ru.common.medical_clinic.person_service.core.*</FILTER>
+    </SUITE>
   </component>
 </project>

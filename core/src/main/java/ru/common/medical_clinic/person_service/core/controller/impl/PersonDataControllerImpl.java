@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.common.medical_clinic.person_service.core.controller.PersonDataController;
@@ -24,7 +25,7 @@ public class PersonDataControllerImpl implements PersonDataController {
 
     @Override
     @PostMapping(path = "/")
-    public ResponseEntity<?> savePersonData(PersonDataDto personDataDto) {
+    public ResponseEntity<?> savePersonData(@RequestBody PersonDataDto personDataDto) {
         personDataService.save(personDataDto);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }

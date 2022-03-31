@@ -15,7 +15,7 @@
             sex             = #{sex},
             contact_id      = #{contactId},
             medical_card_id = #{contactId},
-        parent_id       = #{parentId}
+            parent_id       = #{parentId}
         where id = #{id};
     </update>
 
@@ -55,8 +55,8 @@
     </select>
 
     <insert id="insert" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
-        insert into person_data (last_name, first_name, birth_dt, age, sex, contact_id, medical_card_id, parent_id)
-        values (#{lastName}, #{firstName}, #{birthDt}, #{age}, #{sex}, #{contactId}, #{medicalCardId},
+        insert into person_data (last_name, first_name, email, password, disabled, birth_dt, age, sex, contact_id, medical_card_id, parent_id)
+        values (#{lastName}, #{firstName}, #{email}, #{password}, #{disabled},#{birthDt}, #{age}, #{sex}, #{contactId}, #{medicalCardId},
                 #{parentId});
     </insert>
 
@@ -71,7 +71,7 @@
           and person.id != b.id;
     </delete>
 
-    <delete id="deleteById" parameterType="java.lang.Long">
-        delete from person_data where id = #{id}
-    </delete>
+    <update id="deleteById" parameterType="java.lang.Long">
+        update person_data set disabled = true;
+    </update>
 </mapper>

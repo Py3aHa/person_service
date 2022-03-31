@@ -25,7 +25,7 @@ create table address
     city       varchar(255)                   not null,
     index      integer,
     street     varchar(255)                   not null,
-    building   varchar(35)                    not null,
+    building   varchar(32)                    not null,
     flat       varchar(32)
 );
 
@@ -46,14 +46,23 @@ create table illness
 create table person_data
 (
     id              bigserial primary key,
-    last_name       varchar(255)                        not null,
-    first_name      varchar(255)                        not null,
-    birth_dt        date                                not null,
+    last_name       varchar(255) not null,
+    first_name      varchar(255) not null,
+    email           varchar(255) not null unique,
+    password        varchar(128) not null,
+    disabled        bool         not null,
+    birth_dt        date         not null,
     age             smallint,
-    sex             char                                not null,
-    contact_id      bigint references contact (id)      not null,
-    medical_card_id bigint references medical_card (id) not null,
+    sex             char         not null,
+    contact_id      bigint references contact (id),
+    medical_card_id bigint references medical_card (id),
     parent_id       bigint references person_data (id)
+);
+
+create table roles
+(
+    id   bigserial primary key,
+    role varchar(128)
 );
 
 create view person_contact_view as
@@ -100,13 +109,17 @@ create or replace function insert_person_data()
 $$
 begin
     insert into person_data (last_name, first_name, birth_dt, age, sex, contact_id, medical_card_id, parent_id)
-    values (new.last_name  , new.first_name, new.birth_dt, new.age, new.sex, new.contact_id, new.medical_card_id,
+    values (new.last_name, new.first_name, new.birth_dt, new.age, new.sex, new.contact_id, new.medical_card_id,
             new.parent_id);
     return new;
 end;
 $$;
 
-create trigger person_data_trigger_insert after insert on person_data for each row execute procedure insert_person_data();
+create trigger person_data_trigger_insert
+    after insert
+    on person_data
+    for each row
+execute procedure insert_person_data();
 
 insert into contact (phone_number, email, profile_link)
 values ('000000', 'ivanova@mail.ru', 'ivanova.ru');

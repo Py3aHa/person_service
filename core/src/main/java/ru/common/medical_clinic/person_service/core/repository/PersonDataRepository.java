@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Select;
 import ru.common.medical_clinic.person_service.core.model.PersonDataEntity;
 import ru.common.medical_clinic.person_service.dto.PersonAddressDto;
 import ru.common.medical_clinic.person_service.dto.PersonDataContactDto;
+import ru.common.medical_clinic.person_service.dto.PersonDataForAdminDto;
 
 import java.util.List;
 
@@ -19,6 +20,23 @@ public interface PersonDataRepository {
      */
     @Select("select * from person_data where id = #{personId}")
     PersonDataEntity findById(Long personId);
+
+    /**
+     * Searches for a person data by email in the "person_data" table of the database.
+     *
+     * @param email is a unique value of the PersonDataEntity object
+     * @return object of the PersonDataEntity
+     */
+    @Select("select * from person_data where email = #{email}")
+    PersonDataEntity findByEmail(String email);
+
+    /**
+     * Searches for all objects without passwords from "person_data" table of the database.
+     *
+     * @return object of the PersonDataEntity
+     */
+    @Select("select * from person_data")
+    List<PersonDataForAdminDto> findAllExceptPassword();
 
     /**
      * Searches for all objects of the "person_data" table.
@@ -45,7 +63,7 @@ public interface PersonDataRepository {
     void update(PersonDataEntity personDataEntity);
 
     /**
-     * Deletes an object from the "person_data" table.
+     * Updates an object from the "person_data" table as disabled = true.
      *
      * @param id is a primary key of the PersonDataEntity object.
      *           If the object was not found in the table, then deletion does not occur
